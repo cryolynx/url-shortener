@@ -1,0 +1,10 @@
+-- CreateTable
+CREATE TABLE "UrlEntry" (
+    "id" SERIAL NOT NULL,
+    "longUrl" VARCHAR NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "UrlEntry_pkey" PRIMARY KEY ("id")
+);
+
+ALTER SEQUENCE "UrlEntry_id_seq" RESTART WITH 10000 
