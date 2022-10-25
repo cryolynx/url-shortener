@@ -1,8 +1,11 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { Logger, LoggerErrorInterceptor } from 'nestjs-pino';
+import { patchNestJsSwagger } from 'nestjs-zod';
 
 import { AppModule } from './app.module';
+
+patchNestJsSwagger();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { bufferLogs: true });

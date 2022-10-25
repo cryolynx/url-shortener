@@ -1,4 +1,5 @@
-import { Body, Controller, Get, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query, UsePipes } from '@nestjs/common';
+import { ZodValidationPipe } from 'nestjs-zod';
 
 import { GetOriginalUrlUseCase } from './get-original-url.use-case';
 import { ShortenUrlInputDto } from './shorten-url.dto';
@@ -16,6 +17,7 @@ export class UrlShorteningController {
     return this.getOriginalUrlUseCase.execute(slug);
   }
 
+  @UsePipes(ZodValidationPipe)
   @Post('/shorten')
   shortenUrl(@Body() dto: ShortenUrlInputDto) {
     return this.shortenUrlUseCase.execute(dto);
