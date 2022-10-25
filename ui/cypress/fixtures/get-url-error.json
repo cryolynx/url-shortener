@@ -1,0 +1,5 @@
+{
+    "statusCode": 404,
+    "message": "Could not find original URL for slug 123",
+    "error": "Not Found"
+}

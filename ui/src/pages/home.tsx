@@ -35,26 +35,21 @@ type FormValues = {
 
 export function Home() {
   const { register, handleSubmit, reset } = useForm<FormValues>()
-  const { shortenUrl } = useApi()
+  const { shortenUrl, error } = useApi()
   const [originalLink, setOriginalLink] = useState<string | null>(null)
   const [shortenedLink, setShortenedLink] = useState<string | null>(null)
-  const [error, setError] = useState(false)
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     setOriginalLink(null)
     setShortenedLink(null)
-    setError(false)
 
-    try {
-      setOriginalLink(data.url)
+    setOriginalLink(data.url)
 
-      const slug = await shortenUrl(data.url)
+    const slug = await shortenUrl(data.url)
 
+    if (slug) {
       setShortenedLink(`${window.origin}/${slug}`)
       reset()
-    } catch (error) {
-      console.error(error)
-      setError(true)
     }
   }
 

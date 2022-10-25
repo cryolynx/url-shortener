@@ -12,7 +12,8 @@
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\" --fix",
-    "test": "jest"
+    "test": "jest",
+    "test:e2e": "cypress open"
   },
   "dependencies": {
     "@radix-ui/colors": "^0.1.8",
@@ -33,6 +34,8 @@
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
     "@vitejs/plugin-react": "^2.1.0",
+    "cypress": "^10.11.0",
+    "cypress-vite": "^1.2.1",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
