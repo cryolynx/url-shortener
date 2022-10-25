@@ -1,6 +1,6 @@
 Hi there! This is an example single-page URL shortening application built using React and Node.js, written in TypeScript.
 
-### Tech stack
+# Tech stack
 
 The frontend tech stack consists of:
 - [React](https://reactjs.org/) (UI library/framework)
@@ -19,7 +19,7 @@ Other tooling:
 - [ESLint](https://eslint.org/) (linting)
 - [Prettier](https://prettier.io/) (formatting)
 
-### Getting started
+# Getting started
 
 Before running the application, please make sure to have the following tools installed:
 - docker and docker-compose (see https://docker-docs.netlify.app/compose/install/ for instructions)
